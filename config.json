@@ -1,0 +1,58 @@
+{
+  "restaurant": {
+    "food": [
+      "food",
+      "spicy",
+      "price",
+      "sushi",
+      "pizza",
+      "dessert",
+      "sandwich",
+      "taste",
+      "tea",
+      "fish",
+      "delicious",
+      "bland",
+      "drinks",
+      "flavourful"
+    ],
+    "service": [
+      "service",
+      "tips",
+      "manager",
+      "waitress",
+      "rude",
+      "forgetful",
+      "host",
+      "server",
+      "service",
+      "quick",
+      "staff",
+      "friendly"
+    ],
+    "price": [
+      "price",
+      "tip",
+      "money",
+      "cost",
+      "bargain",
+      "bill",
+      "spent",
+      "overpriced",
+      "expensive",
+      "cheap"
+    ],
+    "ambience": [
+      "ambience",
+      "funny",
+      "decorative",
+      "uncomfortable",
+      "setting",
+      "atmosphere",
+      "mood",
+      "relax",
+      "decor",
+      "crowded"
+    ]
+  }
+}
