@@ -54,5 +54,87 @@
       "decor",
       "crowded"
     ]
+  },
+  "restaurant-sentiment": {
+    "food": {
+      "positive": [
+        "delicious",
+        "tasty",
+        "yummy",
+        "palatable",
+        "enjoy",
+        "satisfy",
+        "like"
+      ],
+      "negative": [
+        "tasteless",
+        "bland",
+        "nasty",
+        "unpalatable",
+        "disgusting",
+        "unsavoury"
+      ]
+    },
+    "service": {
+      "positive": [
+        "attentive",
+        "friendly",
+        "efficient",
+        "professional",
+        "warm",
+        "welcoming",
+        "nice",
+        "patient",
+        "helpful",
+        "meticulous"
+      ],
+      "negative": [
+        "rude",
+        "impolite",
+        "disrespect",
+        "impatient",
+        "apathy",
+        "thoughtless",
+        "careless",
+        "unprofessional"
+      ]
+    },
+    "price": {
+      "positive": [
+        "affordable",
+        "worth",
+        "reasonable",
+        "economical",
+        "inexpensive"
+      ],
+      "negative": [
+        "expensive",
+        "overpriced",
+        "costly",
+        "pricey"
+      ]
+    },
+    "ambience": {
+      "positive": [
+        "cozy",
+        "comfortable",
+        "pleasure",
+        "stylish",
+        "ornate",
+        "concordant",
+        "harmonious"
+      ],
+      "negative": [
+        "dismal",
+        "drab",
+        "tacky",
+        "gloomy",
+        "shabby",
+        "cluttered",
+        "obsolete",
+        "oppressive",
+        "depressed"
+      ]
+    }
   }
 }

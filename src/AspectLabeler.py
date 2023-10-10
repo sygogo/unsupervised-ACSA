@@ -47,13 +47,15 @@ class AspectLabeler(object):
         return indexs
 
     def assign_aspect(self, sentence):
-        data = self.tokenizer(sentence, add_special_tokens=False, return_tensors='pt', truncation=True, is_split_into_words=False).data
+        data = self.tokenizer(sentence.lower(), add_special_tokens=False, return_tensors='pt', truncation=True, is_split_into_words=False).data
         sentence_token_ids, token_type_ids, attention_mask = data['input_ids'], data["token_type_ids"], data["attention_mask"]
         sentence_new = [self.tokenizer.convert_ids_to_tokens(i) for i in sentence_token_ids]
         indexs = self.find_index(sentence_new[0])
+        if len(indexs) == 0:
+            return "None"
         dists = self.mlm_model(sentence_token_ids.cuda(), attention_mask.cuda()).logits
-        dists = dists[:,indexs,:]
+        dists = dists[:, indexs, :]
         aspect_seq, seed_length, cate_list = self.aspect_seed_sequences
         aspect_dists = torch.softmax(torch.mm(aspect_seq, dists.sum(dim=1).permute(1, 0)) / seed_length.unsqueeze(-1), 0)
-        aspect_index = torch.argmax(aspect_dists).item()
-        return cate_list[aspect_index]
+        aspect_index = [i for i, v in enumerate(aspect_dists) if v > (1.5 / len(cate_list))]
+        return [cate_list[i] for i in aspect_index]
